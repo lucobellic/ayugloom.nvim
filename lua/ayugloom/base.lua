@@ -5,8 +5,7 @@ local c = require('ayugloom.colors')
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
 ---@diagnostic disable: undefined-global
-local theme = lush(function(injected_functions)
-  local sym = injected_functions.sym
+local theme = lush(function()
   return {
     -- The following are the Neovim (as of 0.8.0-dev+100-g371dfb174) highlight
     -- groups, mostly used for styling UI elements.
@@ -21,11 +20,11 @@ local theme = lush(function(injected_functions)
 
     ColorColumn  { bg = c.editor.line}, -- Columns set with 'colorcolumn'
     Conceal      { fg = c.fg, bg = c.bg }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-    Cursor       { fg = c.common.accent }, -- Character under the cursor
+    Cursor       { reverse = true }, -- Character under the cursor
     lCursor      { Cursor }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM     { Cursor }, -- Like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn { bg = c.editor.line }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine   { bg = c.editor.line }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorColumn { bg = c.selection }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorLine   { bg = c.selection.darken(20) }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = c.guide }, -- Directory names (and other special names in listings)
     DiffAdd      { fg = c.vcs.added }, -- Diff mode: Added line |diff.txt|
     DiffChange   { fg = c.vcs.modified }, -- Diff mode: Changed line |diff.txt|
@@ -42,11 +41,11 @@ local theme = lush(function(injected_functions)
     Folded       { fg = c.syntax.comment }, -- Line used for closed folds
     FoldColumn   { Folded }, -- 'foldcolumn'
     SignColumn   { Folded }, -- Column where |signs| are displayed
-    IncSearch    { bg = c.selection }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-    Substitute   { bg = c.selection }, -- |:substitute| replacement text highlighting
+    IncSearch    { fg = DiffChange.fg, bg = c.selection }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    Substitute   { fg = DiffDelete.fg, bg = c.selection }, -- |:substitute| replacement text highlighting
     LineNr       { fg = c.inactive }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { Normal }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen   { gui = 'underline' }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen   { reverse = true, unerline = false }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg      { fg = c.syntax.string }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
     MsgSeparator { Normal }, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -54,12 +53,12 @@ local theme = lush(function(injected_functions)
     NonText      { fg = c.guide, bg = Normal.bg }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 
     Pmenu        { Normal }, -- Popup menu: Normal item.
-    PmenuSel     { bg = c.seletion }, -- Popup menu: Selected item.
+    PmenuSel     { bg = c.selection }, -- Popup menu: Selected item.
     PmenuSbar    { PmenuSel }, -- Popup menu: Scrollbar.
     PmenuThumb   { CursorLine }, -- Popup menu: Thumb of the scrollbar.
     Question     { MoreMsg }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search       { IncSearch }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    Search       { bg = c.selection.lighten(10), italic = true }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     SpecialKey   { bg = c.selection }, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad     { undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap     { undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -76,7 +75,7 @@ local theme = lush(function(injected_functions)
     WarningMsg   { fg = c.common.accent }, -- Warning messages
     Whitespace   { NonText }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- Winseparator { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
-    WildMenu     { bg = c.selection, gui = 'undercurl' }, -- Current match in 'wildmenu' completion
+    WildMenu     { bg = c.selection }, -- Current match in 'wildmenu' completion
 
     -- Common vim syntax groups used for all kinds of code and markup.
     -- Commented-out groups should chain up to their preferred (*) group
@@ -156,14 +155,14 @@ local theme = lush(function(injected_functions)
     DiagnosticUnderlineWarn    { undercurl = true }, -- Used to underline "Warn" diagnostics.
     DiagnosticUnderlineInfo    { undercurl = true }, -- Used to underline "Info" diagnostics.
     DiagnosticUnderlineHint    { undercurl = true }, -- Used to underline "Hint" diagnostics.
-    -- DiagnosticFloatingError    { } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
-    -- DiagnosticFloatingWarn     { } , -- Used to color "Warn" diagnostic messages in diagnostics float.
-    -- DiagnosticFloatingInfo     { } , -- Used to color "Info" diagnostic messages in diagnostics float.
-    -- DiagnosticFloatingHint     { } , -- Used to color "Hint" diagnostic messages in diagnostics float.
-    -- DiagnosticSignError        { } , -- Used for "Error" signs in sign column.
-    -- DiagnosticSignWarn         { } , -- Used for "Warn" signs in sign column.
-    -- DiagnosticSignInfo         { } , -- Used for "Info" signs in sign column.
-    -- DiagnosticSignHint         { } , -- Used for "Hint" signs in sign column.
+    DiagnosticFloatingError    { DiagnosticError } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
+    DiagnosticFloatingWarn     { DiagnosticWarn } , -- Used to color "Warn" diagnostic messages in diagnostics float.
+    DiagnosticFloatingInfo     { DiagnosticInfo } , -- Used to color "Info" diagnostic messages in diagnostics float.
+    DiagnosticFloatingHint     { DiagnosticHint } , -- Used to color "Hint" diagnostic messages in diagnostics float.
+    DiagnosticSignError        { DiagnosticError } , -- Used for "Error" signs in sign column.
+    DiagnosticSignWarn         { DiagnosticWarn } , -- Used for "Warn" signs in sign column.
+    DiagnosticSignInfo         { DiagnosticInfo } , -- Used for "Info" signs in sign column.
+    DiagnosticSignHint         { DiagnosticHint } , -- Used for "Hint" signs in sign column.
     DiagnosticUnnecessary      { fg = c.syntax.comment, gui = 'strikethrough' }, -- Used to color "Unnecessary" diagnostics.
 
 }
