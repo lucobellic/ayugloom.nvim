@@ -96,13 +96,14 @@ local theme = lush(function()
 
     Identifier     { fg = c.syntax.entity }, -- (*) Any variable name
     Function       { fg = c.syntax.func }, --   Function name (also: methods for classes)
+    Property       { fg = c.syntax.property }, --  Variable names that are properties of objects
 
     Statement      { fg = c.syntax.keyword }, -- (*) Any statement
     -- Conditional    { }, --   if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --   case, default, etc.
     Operator       { fg = c.syntax.operator }, --   "sizeof", "+", "*", etc.
-    -- Keyword        { }, --   any other keyword
+    Keyword        { fg = c.syntax.keyword }, --   any other keyword
     Exception      { fg = c.syntax.keyword, italic = true }, --   try, catch, throw
 
     PreProc        { fg = c.common.accent }, -- (*) Generic Preprocessor
