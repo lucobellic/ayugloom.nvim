@@ -33,11 +33,12 @@ local theme = lush(function()
     Normal       { fg = c.fg, bg = c.bg }, -- Normal text
     NormalFloat  { Normal }, -- Normal text in floating windows.
     NormalNC     { Normal }, -- normal text in non-current windows
-    EndOfBuffer  { fg = Normal.bg }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
+    VertSplit    { fg = Normal.bg }, -- Column separating vertically split windows
+    Winseparator { VertSplit }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
+    EndOfBuffer  { VertSplit }, -- after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- Cursor in a focused terminal
     -- TermCursorNC { }, -- Cursor in an unfocused terminal
     ErrorMsg     { fg = c.common.error }, -- Error messages on the command line
-    VertSplit    { fg = Normal.bg }, -- Column separating vertically split windows
     Folded       { fg = c.syntax.comment }, -- Line used for closed folds
     FoldColumn   { Folded }, -- 'foldcolumn'
     SignColumn   { Folded }, -- Column where |signs| are displayed
@@ -74,7 +75,6 @@ local theme = lush(function()
     VisualNOS    { Visual }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = c.common.accent }, -- Warning messages
     Whitespace   { NonText }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    -- Winseparator { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu     { bg = c.selection }, -- Current match in 'wildmenu' completion
 
     -- Common vim syntax groups used for all kinds of code and markup.
