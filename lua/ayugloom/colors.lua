@@ -19,6 +19,7 @@ return {
     operator = hsl('#F29668'),
     namespace = hsl('#95E6CB'),
     parameter = hsl('#D2A6FF'),
+    property = hsl('#F07178'),
   },
   vcs = {
     added = hsl('#C2D94C'),
@@ -66,10 +67,11 @@ return {
     }
   },
   common = {
-    accent = hsl('#E6B450'),
+    accent = hsl('#FFCC66'),
     error = hsl('#D95757')
   },
 
+  match = hsl('#6C5980'),
   selection = hsl('#152538'),
   bg = hsl('#0F131A'),
   line = hsl('#0D1018'),
