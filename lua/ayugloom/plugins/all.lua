@@ -6,7 +6,7 @@ return lush.merge({
   require(plugins .. 'cmp'),
   require(plugins .. 'diffview'),
   require(plugins .. 'floaterm'),
-  require(plugins .. 'gitgutter'),
+  require(plugins .. 'gitsigns'),
   require(plugins .. 'hop'),
   require(plugins .. 'illuminate'),
   require(plugins .. 'indent_blankline'),
