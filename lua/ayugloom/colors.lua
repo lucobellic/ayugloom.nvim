@@ -28,8 +28,8 @@ return {
   },
   diff = {
     added = hsl('#34432a'),
-    change = hsl('#162431'),
-    remove = hsl('#59282b'),
+    modified  = hsl('#162431'),
+    removed = hsl('#59282b'),
     text = hsl('#2d4965'),
   },
   editor = {

@@ -26,10 +26,12 @@ local theme = lush(function()
     CursorColumn { bg = c.selection }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine   { bg = c.selection.darken(20) }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = c.guide }, -- Directory names (and other special names in listings)
-    DiffAdd      { fg = c.vcs.added }, -- Diff mode: Added line |diff.txt|
-    DiffChange   { fg = c.vcs.modified }, -- Diff mode: Changed line |diff.txt|
-    DiffDelete   { fg = c.vcs.removed }, -- Diff mode: Deleted line |diff.txt|
-    DiffText     { fg = c.vcs.modified }, -- Diff mode: Changed text within a changed line |diff.txt|
+
+    DiffAdd      { bg = c.diff.added }, -- Diff mode: Added line |diff.txt|
+    DiffChange   { bg = c.diff.modified }, -- Diff mode: Changed line |diff.txt|
+    DiffDelete   { bg = c.diff.removed }, -- Diff mode: Deleted line |diff.txt|
+    DiffText     { bg = c.diff.text }, -- Diff mode: Changed text within a changed line |diff.txt|
+
     Normal       { fg = c.fg, bg = c.bg }, -- Normal text
     NormalFloat  { Normal }, -- Normal text in floating windows.
     NormalNC     { Normal }, -- normal text in non-current windows
@@ -42,9 +44,9 @@ local theme = lush(function()
     Folded       { fg = c.syntax.comment }, -- Line used for closed folds
     FoldColumn   { Folded }, -- 'foldcolumn'
     SignColumn   { Folded }, -- Column where |signs| are displayed
-    IncSearch    { fg = DiffChange.fg, bg = c.selection }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-    Substitute   { fg = DiffDelete.fg, bg = c.selection }, -- |:substitute| replacement text highlighting
-    LineNr       { fg = c.inactive }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    IncSearch    { fg = c.vcs.modified, bg = c.selection }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    Substitute   { fg = c.vcs.deleted, bg = c.selection }, -- |:substitute| replacement text highlighting
+    LineNr       { fg = c.guide }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { Normal }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { reverse = true, unerline = false }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg      { fg = c.syntax.string }, -- 'showmode' message (e.g., "-- INSERT -- ")
