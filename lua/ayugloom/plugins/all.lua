@@ -8,6 +8,7 @@ return lush.merge({
   require(plugins .. 'gitgutter'),
   require(plugins .. 'hop'),
   require(plugins .. 'illuminate'),
+  require(plugins .. 'indent_blankline'),
   require(plugins .. 'neotree'),
   -- require(plugins .. 'treesitter.init'),
 })
