@@ -1,5 +1,4 @@
 local lush = require('lush')
-local hsl = lush.hsl
 local c = require('ayugloom.colors')
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
@@ -23,7 +22,7 @@ local theme = lush(function()
     Cursor       { reverse = true }, -- Character under the cursor
     lCursor      { Cursor }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM     { Cursor }, -- Like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn { bg = c.selection }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorColumn { bg = c.selection.darken(20) }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine   { bg = c.selection.darken(20) }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = c.guide }, -- Directory names (and other special names in listings)
 
@@ -36,7 +35,7 @@ local theme = lush(function()
     NormalFloat  { Normal }, -- Normal text in floating windows.
     NormalNC     { Normal }, -- normal text in non-current windows
     VertSplit    { fg = Normal.bg }, -- Column separating vertically split windows
-    Winseparator { VertSplit }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
+    WinSeparator { VertSplit }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     EndOfBuffer  { VertSplit }, -- after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- Cursor in a focused terminal
     -- TermCursorNC { }, -- Cursor in an unfocused terminal
@@ -53,7 +52,7 @@ local theme = lush(function()
     -- MsgArea      { }, -- Area for messages and cmdline
     MsgSeparator { Normal }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg      { ModeMsg }, -- |more-prompt|
-    NonText      { fg = c.guide, bg = Normal.bg }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    NonText      { fg = c.guide }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 
     Pmenu        { Normal }, -- Popup menu: Normal item.
     PmenuSel     { bg = c.selection }, -- Popup menu: Selected item.
