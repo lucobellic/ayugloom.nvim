@@ -5,6 +5,7 @@ return lush(function()
   return {
     TelescopeBorder { base.FloatBorder },
     TelescopeTitle  { base.FloatTitle  },
+    TelescopePreviewTitle  { bg = base.Identifier.fg },
     TelescopePromptCounter  { base.DiagnosticInfo },
   }
 end)
