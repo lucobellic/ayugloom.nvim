@@ -153,6 +153,11 @@ local theme = lush(function()
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
     -- DiagnosticVirtualTextHint  { } , -- Used for "Hint" diagnostic virtual text.
+
+    DiagnosticLineNrError      { DiagnosticError }, -- Used for "Error" diagnostic signs in sign column
+    DiagnosticLineNrWarn       { DiagnosticWarn }, -- User for "Warn" diagnostic signs in sign column
+    DiagnosticLineNrInfo       { DiagnosticInfo }, -- Used for "Info" diagnostic signs in sign column
+    DiagnosticLineNrHint       { DiagnosticInfo }, -- Used for "Hint" diagnostic signs in sign column
     DiagnosticUnderlineError   { undercurl = true }, -- Used to underline "Error" diagnostics.
     DiagnosticUnderlineWarn    { undercurl = true }, -- Used to underline "Warn" diagnostics.
     DiagnosticUnderlineInfo    { undercurl = true }, -- Used to underline "Info" diagnostics.
