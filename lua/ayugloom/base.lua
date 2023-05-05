@@ -71,7 +71,7 @@ local theme = lush(function()
     TabLine      { Normal }, -- Tab pages line, not active tab page label
     TabLineFill  { TabLine }, -- Tab pages line, where there are no labels
     TabLineSel   { TabLine }, -- Tab pages line, active tab page label
-    Title        { fg = c.common.accent }, -- Titles for output from ":set all", ":autocmd" etc.
+    Title        { fg = c.common.accent, bold = true }, -- Titles for output from ":set all", ":autocmd" etc.
     Visual       { bg = c.selection }, -- Visual mode selection
     VisualNOS    { Visual }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = c.common.accent }, -- Warning messages
@@ -174,7 +174,7 @@ local theme = lush(function()
 
     -- Floating windows
     FloatBorder { fg = c.inactive }, -- Border of floating windows.
-    FloatTitle { fg = Normal.bg, bg = Title.fg }, -- Border of floating windows.
+    FloatTitle { fg = Normal.bg, bg = Title.fg, bold = true }, -- Border of floating windows.
 
 }
 end)

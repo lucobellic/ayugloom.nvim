@@ -5,7 +5,7 @@ return lush(function()
   return {
     TelescopeBorder { base.FloatBorder },
     TelescopeTitle  { base.FloatTitle  },
-    TelescopePreviewTitle  { bg = base.Identifier.fg },
+    TelescopePreviewTitle  { bg = base.Identifier.fg, bold = true },
     TelescopePromptCounter  { base.DiagnosticInfo },
   }
 end)
