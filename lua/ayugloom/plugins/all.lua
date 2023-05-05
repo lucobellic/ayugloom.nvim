@@ -12,5 +12,6 @@ return lush.merge({
   require(plugins .. 'illuminate'),
   require(plugins .. 'indent_blankline'),
   require(plugins .. 'neotree'),
+  require(plugins .. 'noice'),
   require(plugins .. 'telescope'),
 })
