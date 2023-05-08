@@ -14,5 +14,6 @@ return lush.merge({
   require(plugins .. 'lspsaga'),
   require(plugins .. 'neotree'),
   require(plugins .. 'noice'),
+  require(plugins .. 'notify'),
   require(plugins .. 'telescope'),
 })
