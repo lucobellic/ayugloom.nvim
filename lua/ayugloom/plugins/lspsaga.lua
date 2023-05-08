@@ -1,0 +1,47 @@
+local lush = require('lush')
+local c = require('ayugloom.colors')
+local base = require('ayugloom.base')
+
+return lush(function()
+  return {
+    -- SagaWinbarModule {},
+    -- SagaWinbarInterface {},
+    -- SagaWinbarConstructor {},
+    -- SagaWinbarStruct {},
+    -- SagaWinbarObject {},
+    -- SagaWinbarUnit {},
+    -- SagaWinbarFile {},
+    -- SagaWinbarSnippet {},
+    -- SagaWinbarText {},
+    -- SagaWinbarTypeAlias {},
+    -- SagaWinbarEvent {},
+    -- SagaWinbarParameter {},
+    -- SagaWinbarKey {},
+    -- SagaWinbarValue {},
+    -- SagaWinbarMacro {},
+    -- SagaWinbarNumber {},
+    -- SagaWinbarConstant {},
+    -- SagaWinbarFunction {},
+    -- SagaWinbarEnum {},
+    -- SagaWinbarField {},
+    -- SagaWinbarProperty {},
+    -- SagaWinbarMethod {},
+    -- SagaWinbarClass {},
+    -- SagaWinbarFolder {},
+    -- SagaWinbarPackage {},
+    -- SagaWinbarStaticMethod {},
+    -- SagaWinbarTypeParameter {},
+    -- SagaWinbarEnumMember {},
+    -- SagaWinbarOperator {},
+    -- SagaWinbarNull {},
+    -- SagaWinbarNamespace {},
+    -- SagaWinbarArray {},
+    -- SagaWinbarBoolean {},
+    -- SagaWinbarString {},
+    -- SagaWinbarVariable {},
+    -- SagaWinbarFilename {},
+    -- SagaWinbarFolderName {},
+    -- SagaWinbarFileIcon {},
+    SagaWinbarSep { base.LineNr },
+  }
+end)
