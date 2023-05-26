@@ -43,8 +43,8 @@ local theme = lush(function()
     Folded       { fg = c.syntax.comment }, -- Line used for closed folds
     FoldColumn   { Folded }, -- 'foldcolumn'
     SignColumn   { Folded }, -- Column where |signs| are displayed
-    IncSearch    { fg = c.vcs.modified, bg = c.selection }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-    Substitute   { fg = c.vcs.deleted, bg = c.selection }, -- |:substitute| replacement text highlighting
+    IncSearch    { fg = c.bg, bg = c.vcs.modified }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    Substitute   { fg = c.bg, bg = c.vcs.added }, -- |:substitute| replacement text highlighting
     LineNr       { fg = c.guide }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { Normal }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { reverse = true, unerline = false }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -60,7 +60,7 @@ local theme = lush(function()
     PmenuThumb   { CursorLine }, -- Popup menu: Thumb of the scrollbar.
     Question     { MoreMsg }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search       { bg = c.selection.lighten(10), italic = true }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    Search       { IncSearch }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     SpecialKey   { bg = c.selection }, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad     { undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap     { undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
