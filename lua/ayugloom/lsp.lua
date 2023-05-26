@@ -5,28 +5,44 @@ local c = require('ayugloom.colors')
 return lush(function(injected_functions)
   local sym = injected_functions.sym
   return {
-    sym "@lsp.type.class"       { fg            = c.syntax.entity   },
-    sym "@lsp.type.struct"      { fg            = c.syntax.entity   },
-    sym "@lsp.type.decorator"   { fg            = c.common.accent   },
-    sym "@lsp.type.enum"        { fg            = c.syntax.entity   },
-    sym "@lsp.type.enumMember"  { fg            = c.syntax.constant },
+    sym "@lsp.type.class"      { fg = c.syntax.entity   },
+    sym "@lsp.type.struct"     { fg = c.syntax.entity   },
+    sym "@lsp.type.decorator"  { fg = c.common.accent   },
+    sym "@lsp.type.enum"       { fg = c.syntax.entity   },
+    sym "@lsp.type.enumMember" { fg = c.syntax.constant },
+
     sym "@lsp.type.function"    { base.Function },
     sym "@lsp.typemod.function" { base.Function },
     sym "@lsp.type.method"      { base.Function },
     sym "@lsp.typemod.method"   { base.Function },
+    sym "@function"             { base.Function },
+    sym "@function.builtin"     { base.Function },
+    sym "@function.macro"       { base.Function },
+
     --  sym                     "@lsp.type.interface" {},
     sym "@lsp.type.macro"        { base.PreProc },
     sym "@lsp.mod.globalScope"   { base.PreProc },
+
     sym "@lsp.type.namespace"    { fg = c.syntax.namespace },
     sym "@lsp.typemod.namespace" { fg = c.syntax.namespace },
-    sym "@lsp.type.property"     { fg = c.syntax.property  },
-    sym "@lsp.typemod.property"  { fg = c.syntax.property  },
+    sym "@namespace"             { fg = c.syntax.namespace },
+
+    -- Field and property
+    sym "@lsp.type.property"     { base.Property },
+    sym "@lsp.typemod.property"  { base.Property },
+    sym "@property"              { base.Property },
+    sym "@field"                 { base.Property },
+
     -- sym "@lsp.type.type"          {},
-    sym "@lsp.type.parameter"            { fg   = c.syntax.parameter },
-    sym "@lsp.typemod.parameter"         { fg   = c.syntax.parameter },
-    sym "@lsp.type.variable"             { fg   = c.fg               },
-    sym "@lsp.typemod.variable"          { fg   = c.fg               },
-    sym "@lsp.typemod.variable.readonly" { bold = true               },
+    sym "@lsp.type.parameter"            { fg = c.syntax.parameter },
+    sym "@lsp.typemod.parameter"         { fg = c.syntax.parameter },
+
+    sym "@lsp.type.variable"             { fg   = c.fg     },
+    sym "@lsp.typemod.variable"          { fg   = c.fg     },
+    sym "@lsp.typemod.variable.readonly" { bold = true     },
+    sym "@variable"                      { fg   = c.fg     },
+    sym "@variable.builtin.python"       { base.Identifier },
+
     sym "@lsp.mod"                       { fg   = c.syntax.entity    },
 
 
@@ -52,9 +68,7 @@ return lush(function(injected_functions)
     -- sym "@number"            {},
     -- sym "@boolean"           {},
     -- sym "@float"             {},
-    sym "@function"          { fg = c.syntax.func      },
-    sym "@function.builtin"  { fg = c.syntax.func      },
-    sym "@function.macro"    { fg = c.syntax.func      },
+
     sym "@parameter"         { fg = c.syntax.parameter },
     -- sym "@method"            {},
     -- sym "@field"             {},
@@ -65,13 +79,12 @@ return lush(function(injected_functions)
     -- sym "@label"             {},
     sym "@operator"          { fg = c.syntax.operator  },
     sym "@keyword"           { fg = c.syntax.keyword   },
+    sym "@function"          { base.Include            },
     sym "@exception"         { fg = c.syntax.entity    },
     -- sym "@variable"          {},
     -- sym "@type"              {},
     -- sym "@type.definition"   {},
     -- sym "@storageclass"      {},
-    sym "@namespace"         { fg = c.syntax.regexp    },
-    sym "@include"           { fg = c.syntax.sting     },
     sym "@preproc"           { fg = c.syntax.preproc   },
     sym "@debug"             { fg = c.syntax.entity    },
     sym "@tag"               { fg = c.syntax.tag       },
