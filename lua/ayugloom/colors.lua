@@ -68,7 +68,7 @@ return {
   },
   common = {
     accent = hsl('#FFCC66'),
-    error = hsl('#D95757')
+    error = hsl('#E95757')
   },
 
   match = hsl('#6C5980'),
