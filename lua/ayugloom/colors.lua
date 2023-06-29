@@ -71,7 +71,7 @@ return {
     error = hsl('#E95757')
   },
 
-  match = hsl('#6C5980'),
+  match = hsl('#2d4965'),
   selection = hsl('#152538'),
   bg = hsl('#0F131A'),
   line = hsl('#0D1018'),
