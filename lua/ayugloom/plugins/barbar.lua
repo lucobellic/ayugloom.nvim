@@ -14,9 +14,11 @@ return lush(function()
     BufferVisibleIcon        { base.Directory },
     BufferVisibleSign        { base.Directory },
 
-    BufferDefaultTabpageFill { base.Normal    },
-    BufferTabpageFill        { base.Normal    },
-    BufferTabpages           { base.Normal    },
+    BufferDefaultTabpageFill { base.Normal     },
+    BufferTabpageFill        { base.Normal     },
+    BufferTabpages           { base.Identifier },
+    BufferDefaultTabpagesSep { base.Identifier },
+    BufferTabpagesSep        { base.Identifier },
 
     BufferCurrentMod         { fg  = c.vcs.modified },
     BufferVisibleMod         { fg  = c.vcs.modified },
