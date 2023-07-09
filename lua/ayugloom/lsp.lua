@@ -5,6 +5,9 @@ local c = require('ayugloom.colors')
 return lush(function(injected_functions)
   local sym = injected_functions.sym
   return {
+
+    LspInlayHint { fg = base.Comment.fg, italic = true },
+
     sym "@lsp.type.class"      { fg = c.syntax.entity   },
     sym "@lsp.type.struct"     { fg = c.syntax.entity   },
     sym "@lsp.type.decorator"  { fg = c.common.accent   },
@@ -49,7 +52,7 @@ return lush(function(injected_functions)
     sym "@text"              { fg = c.syntax.string    },
     sym "@text.literal"      { fg = c.syntax.string    },
     sym "@text.reference"    { fg = c.syntax.string    },
-    sym "@text.title"        { fg = c.syntax.string    },
+    sym "@text.title"        { base.Title              },
     sym "@text.uri"          { fg = c.syntax.string    },
     -- sym "@text.underline"    {},
     -- sym "@text.todo"         {},
@@ -79,7 +82,6 @@ return lush(function(injected_functions)
     -- sym "@label"             {},
     sym "@operator"          { fg = c.syntax.operator  },
     sym "@keyword"           { fg = c.syntax.keyword   },
-    sym "@function"          { base.Include            },
     sym "@exception"         { fg = c.syntax.entity    },
     -- sym "@variable"          {},
     -- sym "@type"              {},
