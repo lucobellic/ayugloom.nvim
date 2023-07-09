@@ -17,4 +17,5 @@ return lush.merge({
   require(plugins .. 'notify'),
   require(plugins .. 'scrollbar'),
   require(plugins .. 'telescope'),
+  require(plugins .. 'todo-trouble'),
 })
