@@ -34,7 +34,7 @@ local theme = lush(function()
     Normal       { fg = c.fg, bg = c.bg }, -- Normal text
     NormalFloat  { Normal }, -- Normal text in floating windows.
     NormalNC     { Normal }, -- normal text in non-current windows
-    VertSplit    { fg = Normal.bg }, -- Column separating vertically split windows
+    VertSplit    { fg = c.inactive}, -- Column separating vertically split windows
     WinSeparator { VertSplit }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     EndOfBuffer  { VertSplit }, -- after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- Cursor in a focused terminal
@@ -86,7 +86,7 @@ local theme = lush(function()
     --
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Comment        { fg = c.syntax.comment, blend = 55 }, -- Any comment
+    Comment        { fg = c.syntax.comment }, -- Any comment
 
     Constant       { fg = c.syntax.constant }, -- (*) Any constant
     String         { fg = c.syntax.string }, --   A string constant: "this is a string"
@@ -173,7 +173,7 @@ local theme = lush(function()
     DiagnosticUnnecessary      { fg = c.syntax.comment, gui = 'strikethrough' }, -- Used to color "Unnecessary" diagnostics.
 
     -- Floating windows
-    FloatBorder { fg = c.inactive }, -- Border of floating windows.
+    FloatBorder { VertSplit }, -- Border of floating windows.
     FloatTitle { fg = Normal.bg, bg = Title.fg, bold = true }, -- Border of floating windows.
 
 }
