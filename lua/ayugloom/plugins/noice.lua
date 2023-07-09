@@ -11,5 +11,6 @@ return lush(function()
     NoiceCmdlinePopupBorderInput { base.FloatBorder },
     NoiceCmdlinePopupBorderLua { base.FloatBorder },
     NoiceCmdlinePopupBorderSearch { base.FloatBorder },
+    NoiceCmdlinePopupTitle { base.FloatTitle },
   }
 end)
