@@ -15,6 +15,7 @@ return lush.merge({
   require(plugins .. 'neotree'),
   require(plugins .. 'noice'),
   require(plugins .. 'notify'),
+  require(plugins .. 'nvim-dap-ui'),
   require(plugins .. 'navbuddy'),
   require(plugins .. 'scrollbar'),
   require(plugins .. 'telescope'),
