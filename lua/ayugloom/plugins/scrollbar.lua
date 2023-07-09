@@ -4,9 +4,10 @@ local base = require('ayugloom.base')
 
 return lush(function()
   return {
-    ScrollbarHandle { fg = c.syntax.comment },
+    ScrollbarHandle { base.DiffText },
+    ScrollbarCursor { fg = base.CursorLineNr.fg, bg = base.CursorLine.bg },
+    ScrollbarCursorHandle { fg = ScrollbarCursor.fg, bg = ScrollbarHandle.bg },
 
-    ScrollbarCursor { ScrollbarHandle }, -- TODO: Hide cursor without handle
     ScrollbarError { base.DiagnosticError },
     ScrollbarGitAdd { fg = c.syntax.string },
     ScrollbarGitChange { fg = c.syntax.tag },
@@ -14,18 +15,16 @@ return lush(function()
     ScrollbarHint { base.DiagnosticHint },
     ScrollbarInfo { base.DiagnosticInfo },
     ScrollbarMisc { base.DiagnosticHint },
-    ScrollbarSearch { base.Search },
+    ScrollbarSearch { base.DiagnosticWarn },
     ScrollbarWarn { base.DiagnosticWarn },
-
-    ScrollbarCursorHandle { ScrollbarHandle },
-    ScrollbarErrorHandle { ScrollbarError },
-    ScrollbarGitAddHandle { ScrollbarGitAdd },
-    ScrollbarGitChangeHandle { ScrollbarGitChange },
-    ScrollbarGitDeleteHandle { ScrollbarGitDelete },
-    ScrollbarHintHandle { ScrollbarHint },
-    ScrollbarInfoHandle { ScrollbarInfo },
-    ScrollbarMiscHandle { ScrollbarMisc },
-    ScrollbarSearchHandle { ScrollbarSearch },
-    ScrollbarWarnHandle { ScrollbarWarn }
+    ScrollbarErrorHandle { fg = ScrollbarError.fg, bg = ScrollbarHandle.bg },
+    ScrollbarGitAddHandle { fg = ScrollbarGitAdd.fg, bg = ScrollbarHandle.bg },
+    ScrollbarGitChangeHandle { fg = ScrollbarGitChange.fg, bg = ScrollbarHandle.bg },
+    ScrollbarGitDeleteHandle { fg = ScrollbarGitDelete.fg, bg = ScrollbarHandle.bg },
+    ScrollbarHintHandle { fg = ScrollbarHint.fg, bg = ScrollbarHandle.bg },
+    ScrollbarInfoHandle { fg = ScrollbarInfo.fg, bg = ScrollbarHandle.bg },
+    ScrollbarMiscHandle { fg = ScrollbarMisc.fg, bg = ScrollbarHandle.bg },
+    ScrollbarSearchHandle { fg = ScrollbarSearch.fg, bg = ScrollbarHandle.bg },
+    ScrollbarWarnHandle { fg = ScrollbarWarn.fg, bg = ScrollbarHandle.bg }
   }
 end)
