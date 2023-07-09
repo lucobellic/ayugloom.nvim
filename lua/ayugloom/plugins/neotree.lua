@@ -1,8 +1,14 @@
 local lush = require('lush')
+local base = require('ayugloom.base')
+local c = require('ayugloom.colors')
 
 return lush(function()
   return {
-    NeoTreeGitUntracked { fg = lush.hsl('#626262') },
-    NeoTreeGitUnstaged  { fg = lush.hsl('#626262') },
+    NeoTreeGitUntracked { base.Comment },
+    NeoTreeGitUnstaged { base.Comment },
+    NeoTreeTabInactive { fg = c.guide },
+    -- NeoTreeTabActive {},
+    NeoTreeTabSeparatorInactive { base.Normal },
+    NeoTreeTabSeparatorActive { base.Normal },
   }
 end)
