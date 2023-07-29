@@ -4,6 +4,7 @@ local plugins = 'ayugloom.plugins.'
 return lush.merge({
   require(plugins .. 'treesitter.all'),
   require(plugins .. 'barbar'),
+  require(plugins .. 'bufferline'),
   require(plugins .. 'cmp'),
   require(plugins .. 'diffview'),
   require(plugins .. 'floaterm'),
