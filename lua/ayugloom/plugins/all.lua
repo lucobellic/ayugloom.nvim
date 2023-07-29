@@ -7,6 +7,7 @@ return lush.merge({
   require(plugins .. 'bufferline'),
   require(plugins .. 'cmp'),
   require(plugins .. 'diffview'),
+  require(plugins .. 'flash'),
   require(plugins .. 'floaterm'),
   require(plugins .. 'gitsigns'),
   require(plugins .. 'hop'),
