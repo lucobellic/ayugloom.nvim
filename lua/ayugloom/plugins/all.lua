@@ -20,6 +20,7 @@ return lush.merge({
   require(plugins .. 'nvim-dap-ui'),
   require(plugins .. 'navbuddy'),
   require(plugins .. 'scrollbar'),
+  require(plugins .. 'semshi'),
   require(plugins .. 'telescope'),
   require(plugins .. 'todo-trouble'),
 })
