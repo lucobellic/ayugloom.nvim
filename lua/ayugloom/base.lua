@@ -31,6 +31,10 @@ local theme = lush(function()
     DiffDelete   { bg = c.diff.removed }, -- Diff mode: Deleted line |diff.txt|
     DiffText     { bg = c.diff.text }, -- Diff mode: Changed text within a changed line |diff.txt|
 
+    diffAdded    { fg = c.vcs.added    },
+    diffRemoved  { fg = c.vcs.removed  },
+    diffChanged  { fg = c.vcs.modified },
+
     Normal       { fg = c.fg, bg = c.bg }, -- Normal text
     NormalFloat  { Normal }, -- Normal text in floating windows.
     NormalNC     { Normal }, -- normal text in non-current windows
