@@ -44,13 +44,13 @@ local theme = lush(function()
     -- TermCursor   { }, -- Cursor in a focused terminal
     -- TermCursorNC { }, -- Cursor in an unfocused terminal
     ErrorMsg     { fg = c.common.error }, -- Error messages on the command line
-    Folded       { fg = c.syntax.comment }, -- Line used for closed folds
+    Folded       { fg = c.guide.darken(20) }, -- Line used for closed folds
     FoldColumn   { Folded }, -- 'foldcolumn'
     SignColumn   { Folded }, -- Column where |signs| are displayed
     IncSearch    { fg = c.bg, bg = c.vcs.modified }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute   { fg = c.bg, bg = c.vcs.added }, -- |:substitute| replacement text highlighting
-    LineNr       { fg = c.guide }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr { Normal }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    LineNr       { Folded }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set
+    CursorLineNr { fg = Normal.fg, bg = CursorLine.bg }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { reverse = true, unerline = false }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg      { fg = c.syntax.string }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
@@ -75,7 +75,7 @@ local theme = lush(function()
     TabLine      { Normal }, -- Tab pages line, not active tab page label
     TabLineFill  { TabLine }, -- Tab pages line, where there are no labels
     TabLineSel   { TabLine }, -- Tab pages line, active tab page label
-    Title        { fg = c.common.accent, bold = true }, -- Titles for output from ":set all", ":autocmd" etc.
+    Title        { fg = c.common.accent, italic = true }, -- Titles for output from ":set all", ":autocmd" etc.
     Visual       { bg = c.selection }, -- Visual mode selection
     VisualNOS    { Visual }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = c.common.accent }, -- Warning messages
@@ -125,7 +125,7 @@ local theme = lush(function()
     Special        { fg = c.syntax.special }, -- (*) Any special symbol
     -- SpecialChar    { }, --   Special character in a constant
     Tag            { fg = c.common.accent }, --   You can use CTRL-] on this
-    Delimiter      { fg = c.common.accent }, --   Character that needs attention
+    Delimiter      { fg = c.syntax.operator }, --   Character that needs attention
     -- SpecialComment { }, --   Special things inside a comment (e.g. '\n')
     -- Debug          { }, --   Debugging statements
 
@@ -151,8 +151,8 @@ local theme = lush(function()
     --
     DiagnosticError            { Error } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticWarn             { WarningMsg }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticInfo             { Identifier }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticHint             { Identifier }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticInfo             { fg = c.syntax.tag }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticHint             { fg = c.syntax.tag }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
@@ -178,7 +178,7 @@ local theme = lush(function()
 
     -- Floating windows
     FloatBorder { VertSplit }, -- Border of floating windows.
-    FloatTitle { fg = Normal.bg, bg = Title.fg, bold = true }, -- Border of floating windows.
+    FloatTitle { fg = Normal.bg, bg = Title.fg, italic = true }, -- Border of floating windows.
 
 }
 end)
