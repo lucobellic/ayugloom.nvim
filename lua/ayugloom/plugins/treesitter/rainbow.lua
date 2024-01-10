@@ -9,6 +9,7 @@ return lush(function()
     TSRainbowBlue { base.Identifier },           -- LightSkyBlue
     TSRainbowOrange { base.Operator },           -- DarkOrange
     TSRainbowGreen { base.String },
+    TSRainbowLightGreen { fg = c.syntax.regexp },
     TSRainbowViolet { fg = c.syntax.parameter }, -- Orchid
     TSRainbowCyan { fg = c.syntax.namespace },
   }

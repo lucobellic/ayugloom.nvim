@@ -8,7 +8,7 @@ return lush(function()
     TodoTroubleWarn { base.DiagnosticWarn },
     TodoTroubleInfo { base.DiagnosticInfo },
     TodoTroubleHint { base.DiagnosticHint },
-    TodoTroubleDefault { base.Identifier },
-    TodoTroubleTest { base.Identifier },
+    TodoTroubleDefault { base.DiagnosticHint },
+    TodoTroubleTest { base.DiagnosticHint },
   }
 end)

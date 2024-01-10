@@ -4,7 +4,8 @@ local base = require('ayugloom.base')
 
 return lush(function()
   return {
-    ScrollbarHandle { base.DiffText },
+    ScrollbarHandle {  fg = base.CursorLineNr.fg, bg = base.CursorLine.bg  },
+    -- ScrollbarHandle { base.DiffText },
     ScrollbarCursor { fg = base.CursorLineNr.fg, bg = base.CursorLine.bg },
     ScrollbarCursorHandle { fg = ScrollbarCursor.fg, bg = ScrollbarHandle.bg },
 
