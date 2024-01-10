@@ -8,6 +8,7 @@ return lush(function(injected_functions)
 
     LspInlayHint { fg = base.Comment.fg, italic = true },
 
+    -- syn "@type.cpp"                { fg = c.syntax.entity   },
     sym "@lsp.type.class"      { fg = c.syntax.entity   },
     sym "@lsp.type.struct"     { fg = c.syntax.entity   },
     sym "@lsp.type.decorator"  { fg = c.common.accent   },
@@ -38,11 +39,12 @@ return lush(function(injected_functions)
 
     -- sym "@lsp.type.type"          {},
     sym "@lsp.type.parameter"            { fg = c.syntax.parameter },
+    sym "@lsp.type.typeParameter"        { fg = c.syntax.parameter },
     sym "@lsp.typemod.parameter"         { fg = c.syntax.parameter },
 
     sym "@lsp.type.variable"             { fg   = c.fg     },
     sym "@lsp.typemod.variable"          { fg   = c.fg     },
-    sym "@lsp.typemod.variable.readonly" { bold = true     },
+    sym "@lsp.typemod.variable.readonly" { italic = true     },
     sym "@variable"                      { fg   = c.fg     },
     sym "@variable.builtin.python"       { base.Identifier },
 
@@ -58,6 +60,8 @@ return lush(function(injected_functions)
     -- sym "@text.todo"         {},
     sym "@comment"           { fg = c.syntax.comment   },
     -- sym "@punctuation"       {},
+    -- sym "@punctuation"       {},
+    sym "@punctuation.delimter" { fg = base.Delimiter.fg },
     -- sym "@constant"          {},
     -- sym "@constant.builtin"  {},
     -- sym "@constant.macro"    {},
@@ -80,11 +84,20 @@ return lush(function(injected_functions)
     -- sym "@conditional"       {},
     -- sym "@repeat"            {},
     -- sym "@label"             {},
-    sym "@operator"          { fg = c.syntax.operator  },
+    sym "@operator"          { base.Operator  },
+    sym "@operator.cpp"          { base.Operator  },
+    -- sym "@operator"          { fg = c.syntax.tag },
+    sym "@lsp.type.operator" { base.Operator },
+    -- sym "@lsp.typemod.operator.userDefined" { fg = c.syntax.tag },
+
+
+
     sym "@keyword"           { fg = c.syntax.keyword   },
+    sym "@lsp.typemod.keyword.documentation" { fg = c.syntax.namespace },
     sym "@exception"         { fg = c.syntax.entity    },
     -- sym "@variable"          {},
     -- sym "@type"              {},
+    sym "@type.qualifier"    { fg = c.syntax.keyword },
     -- sym "@type.definition"   {},
     -- sym "@storageclass"      {},
     sym "@preproc"           { fg = c.syntax.preproc   },
