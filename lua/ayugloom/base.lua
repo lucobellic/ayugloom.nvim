@@ -180,6 +180,11 @@ local theme = lush(function()
     FloatBorder { VertSplit }, -- Border of floating windows.
     FloatTitle { fg = Normal.bg, bg = Title.fg, italic = true }, -- Border of floating windows.
 
+    WinBar         { Normal },
+    WinBarNC       { WinBar },
+    WinBarActive   { WinBar },
+    WinBarInactive { WinBar },
+
 }
 end)
 
