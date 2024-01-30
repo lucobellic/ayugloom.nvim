@@ -5,8 +5,8 @@ local base = require('ayugloom.base')
 return lush(function()
   return {
     BufferLineBuffer { base.Directory },
-    BufferLineBufferSelected { fg = base.Normal.fg, bg = base.CursorLine.bg },
-    BufferLineBufferVisible { fg = BufferLineBuffer.fg, bg = base.CursorLine.bg },
+    BufferLineBufferSelected { fg = base.Identifier.fg, bg = base.CursorLine.bg },
+    BufferLineBufferVisible { fg = base.Comment.fg.lighten(20), bg = base.CursorLine.bg },
 
     BufferLineBackground { base.Directory },
     BufferLineFill { base.Directory },
@@ -68,9 +68,9 @@ return lush(function()
     BufferLinePickSelected { BufferLineBufferSelected },
     BufferLinePickVisible { fg = base.Search.bg },
 
-    BufferLineSeparator { fg = base.Normal.bg, bg = base.Normal.bg },
-    BufferLineSeparatorVisible { fg = BufferLineSeparator.fg, bg = base.CursorLine.bg },
-    BufferLineSeparatorSelected { fg = base.Normal.bg, bg = base.CursorLine.bg },
+    BufferLineSeparator { base.Normal },
+    BufferLineSeparatorVisible { fg = base.Normal.fg, bg = base.CursorLine.bg },
+    BufferLineSeparatorSelected { fg = base.Identifier.fg, bg = base.CursorLine.bg },
 
     BufferLineTab { base.Directory },
     BufferLineTabClose { base.Directory },
