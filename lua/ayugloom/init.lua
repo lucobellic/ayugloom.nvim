@@ -13,11 +13,12 @@
 --  "Y8P"  "Y888888P'"Y88P"`Y8P' "YY8P8P88P     `Y8
 --
 
-local lush = require('lush')
 local base = require('ayugloom.base')
 local lsp = require('ayugloom.lsp')
+local lush = require('lush')
+local markup = require('ayugloom.markup')
 local plugins = require('ayugloom.plugins.all')
 
-return lush.merge({ base, lsp, plugins })
+return lush.merge({ base, markup, lsp, plugins })
 
 -- vi:nowrap
