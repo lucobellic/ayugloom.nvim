@@ -18,7 +18,7 @@ local theme = lush(function()
     --
 
     ColorColumn  { bg = c.editor.line}, -- Columns set with 'colorcolumn'
-    Conceal      { fg = c.fg, bg = c.bg }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal      { fg = c.fg, italic = true }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor       { reverse = true }, -- Character under the cursor
     lCursor      { Cursor }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM     { Cursor }, -- Like Cursor, but used when in IME mode |CursorIM|
