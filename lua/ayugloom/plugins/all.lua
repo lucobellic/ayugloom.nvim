@@ -17,6 +17,7 @@ return lush.merge({
   require(plugins .. 'lspconfig'),
   require(plugins .. 'lspsaga'),
   require(plugins .. 'lualine'),
+  require(plugins .. 'neotest'),
   require(plugins .. 'neotree'),
   require(plugins .. 'noice'),
   require(plugins .. 'notify'),

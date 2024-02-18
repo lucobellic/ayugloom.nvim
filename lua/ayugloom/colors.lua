@@ -4,6 +4,19 @@ local hsl = require('lush.hsl')
 -- local e = hsl('#0D1017')
 
 return {
+  black = hsl('#0B0E14'),
+  white = hsl('#BFBDB6'),
+  green = hsl('#AAD94C'),
+  blue = hsl('#39BAE6'),
+  cyan = hsl('#73B8FF'),
+  magenta = hsl('#D2A6FF'),
+  yellow = hsl('#FFB454'),
+  orange = hsl('#FF8F40'),
+  red = hsl('#F26D78'),
+  light_red = hsl('#F07178'),
+  light_blue = hsl('#59C2FF'),
+  light_green = hsl('#95E6CB'),
+
   syntax = {
     tag = hsl('#39BAE6'),
     func = hsl('#FFB454'),
@@ -28,7 +41,7 @@ return {
   },
   diff = {
     added = hsl('#34432a'),
-    modified  = hsl('#162431'),
+    modified = hsl('#162431'),
     removed = hsl('#59282b'),
     text = hsl('#2d4965'),
   },
@@ -51,7 +64,7 @@ return {
     indentGuide = {
       active = hsl('#6C7380'), -- .alpha(0.5),
       normal = hsl('#6C7380'), -- .alpha(0.2)
-    }
+    },
   },
   ui = {
     fg = hsl('#565B66'),
@@ -64,11 +77,11 @@ return {
     panel = {
       bg = hsl('#0F131A'),
       shadow = hsl('#000000'), -- .alpha(0.5)
-    }
+    },
   },
   common = {
     accent = hsl('#FFCC66'),
-    error = hsl('#E95757')
+    error = hsl('#E95757'),
   },
 
   match = hsl('#2d4965'),
@@ -77,7 +90,6 @@ return {
   line = hsl('#0D1018'),
   -- fg = hsl('#BFBDB6'),
   fg = hsl('#B3B1AD'),
-  inactive  = hsl("#1B2733"),
+  inactive = hsl('#1B2733'),
   guide = hsl('#4D5566'),
 }
-
