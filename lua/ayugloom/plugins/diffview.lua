@@ -5,5 +5,6 @@ return lush(function()
   return {
     DiffviewDiffDelete  { base.Comment },
     DiffviewDiffAddAsDelete { base.DiffDelete },
+    DiffviewFolderSign { base.Directory },
   }
 end)
