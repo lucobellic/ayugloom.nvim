@@ -1,10 +1,10 @@
 local lush = require('lush')
-local base = require('ayugloom.base')
+local color = require('ayugloom.colors')
 
 return lush(function()
   return {
-    IlluminatedWordText  { base.Visual },
-    IlluminatedWordRead  { base.Visual },
-    IlluminatedWordWrite { base.Visual },
+    IlluminatedWordText  { bg = color.match },
+    IlluminatedWordRead  { bg = color.match },
+    IlluminatedWordWrite { bg = color.match },
   }
 end)
