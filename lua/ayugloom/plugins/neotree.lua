@@ -7,6 +7,8 @@ return lush(function()
     NeoTreeGitUntracked { base.Comment },
     NeoTreeGitUnstaged { base.Comment },
     NeoTreeTabInactive { fg = c.guide },
+    NeoTreeIndentMarker { base.WinSeparator },
+    NeoTreeDimText { base.NonText },
     -- NeoTreeTabActive {},
     NeoTreeTabSeparatorInactive { base.Normal },
     NeoTreeTabSeparatorActive { base.Normal },
