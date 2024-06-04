@@ -1,12 +1,16 @@
 local lush = require('lush')
+local hsl = require('lush.hsl')
 local base = require('ayugloom.base')
 local c = require('ayugloom.colors')
+
+local inlay_hint = hsl('#1872A4')
 
 return lush(function(injected_functions)
   local sym = injected_functions.sym
   return {
 
-    LspInlayHint { fg = base.Comment.fg, italic = true },
+
+    LspInlayHint { fg = inlay_hint, bg = base.CursorLine.bg, italic = true },
 
     -- syn "@type.cpp"                { fg = c.syntax.entity   },
     sym "@lsp.type.class"      { fg = c.syntax.entity   },
