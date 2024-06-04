@@ -109,5 +109,7 @@ return lush(function(injected_functions)
     sym "@tag"               { fg = c.syntax.tag       },
 
 
+    sym "@keyword.doxygen"              { fg = c.light_green },
+    sym "@variable.parameter.doxygen"   { fg = c.syntax.parameter },
   }
 end)
