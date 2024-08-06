@@ -13,7 +13,7 @@ local light_red = hsl('#FF7A5D')
 local light_blue = hsl('#59C2FF')
 local light_green = hsl('#95E6CB')
 local light_yellow = hsl('#FFCC66')
-local light_orange = hsl('#FF8F40')
+local light_orange = orange.lighten(30)
 
 return {
   black = black,
@@ -31,7 +31,7 @@ return {
 
   syntax = {
     tag = blue,
-    func = yellow,
+    func = light_yellow,
     entity = light_blue,
     string = green,
     regexp = light_green,
