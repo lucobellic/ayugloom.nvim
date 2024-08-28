@@ -3,7 +3,7 @@ local base = require('ayugloom.base')
 
 return lush(function()
   return {
-    CmpItemAbbr           { base.Comment               },
+    CmpItemAbbr           { base.Normal                },
     CmpItemAbbrMatch      { base.Tag                   },
     CmpItemAbbrMatchFuzzy { base.Keyword               },
     CmpItemAbbrDeprecated { base.DiagnosticUnnecessary },
