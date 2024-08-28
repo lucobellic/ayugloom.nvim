@@ -60,7 +60,7 @@ return {
   editor = {
     fg = hsl('#BFBDB6'),
     bg = hsl('#0D1017'),
-    line = hsl('#131721'),
+    line = hsl('#152538'),
     selection = {
       active = hsl('#409FFF'), -- .alpha(0.3),
       inactive = hsl('#409FFF'), -- .alpha(0.13)
@@ -97,7 +97,7 @@ return {
   },
 
   match = hsl('#2d4965'),
-  selection = hsl('#152538'),
+  selection = hsl('#1B3A5B'),
   bg = hsl('#0F131A'),
   line = hsl('#0D1018'),
   -- fg = hsl('#BFBDB6'),

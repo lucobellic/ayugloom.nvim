@@ -11,5 +11,6 @@ return lush(function()
     TelescopePreviewTitle { fg = c.bg, bg = base.Identifier.fg, italic = true },
     TelescopePromptCounter { base.DiagnosticInfo },
     TelescopePreviewLine { base.Search },
+    TelescopeSelection { base.CursorLine },
   }
 end)

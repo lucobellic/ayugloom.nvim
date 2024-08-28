@@ -22,8 +22,8 @@ local theme = lush(function()
     Cursor       { reverse = true }, -- Character under the cursor
     lCursor      { Cursor }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM     { Cursor }, -- Like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn { bg = c.selection.darken(20) }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine   { bg = c.selection.darken(20) }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorColumn { bg = c.editor.line }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorLine   { bg = c.editor.line }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = c.guide }, -- Directory names (and other special names in listings)
 
     DiffAdd      { bg = c.diff.added }, -- Diff mode: Added line |diff.txt|
@@ -59,7 +59,7 @@ local theme = lush(function()
     NonText      { fg = c.guide }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 
     Pmenu        { Normal }, -- Popup menu: Normal item.
-    PmenuSel     { bg = c.selection }, -- Popup menu: Selected item.
+    PmenuSel     { bg = c.editor.line }, -- Popup menu: Selected item.
     PmenuSbar    { PmenuSel }, -- Popup menu: Scrollbar.
     PmenuThumb   { CursorLine }, -- Popup menu: Thumb of the scrollbar.
     Question     { MoreMsg }, -- |hit-enter| prompt and yes/no questions
@@ -152,7 +152,7 @@ local theme = lush(function()
     DiagnosticError            { Error } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticWarn             { WarningMsg }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticInfo             { fg = c.syntax.tag }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticHint             { fg = c.syntax.tag }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticHint             { fg = c.light_green }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
@@ -161,11 +161,11 @@ local theme = lush(function()
     DiagnosticLineNrError      { DiagnosticError }, -- Used for "Error" diagnostic signs in sign column
     DiagnosticLineNrWarn       { DiagnosticWarn }, -- User for "Warn" diagnostic signs in sign column
     DiagnosticLineNrInfo       { DiagnosticInfo }, -- Used for "Info" diagnostic signs in sign column
-    DiagnosticLineNrHint       { DiagnosticInfo }, -- Used for "Hint" diagnostic signs in sign column
-    DiagnosticUnderlineError   { undercurl = true }, -- Used to underline "Error" diagnostics.
-    DiagnosticUnderlineWarn    { undercurl = true }, -- Used to underline "Warn" diagnostics.
-    DiagnosticUnderlineInfo    { undercurl = true }, -- Used to underline "Info" diagnostics.
-    DiagnosticUnderlineHint    { undercurl = true }, -- Used to underline "Hint" diagnostics.
+    DiagnosticLineNrHint       { DiagnosticHint }, -- Used for "Hint" diagnostic signs in sign column
+    DiagnosticUnderlineError   { underline = false, undercurl = true }, -- Used to underline "Error" diagnostics.
+    DiagnosticUnderlineWarn    { underline = false, undercurl = true }, -- Used to underline "Warn" diagnostics.
+    DiagnosticUnderlineInfo    { underline = false, undercurl = false }, -- Used to underline "Info" diagnostics.
+    DiagnosticUnderlineHint    { underline = false, undercurl = false }, -- Used to underline "Hint" diagnostics.
     DiagnosticFloatingError    { DiagnosticError } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
     DiagnosticFloatingWarn     { DiagnosticWarn } , -- Used to color "Warn" diagnostic messages in diagnostics float.
     DiagnosticFloatingInfo     { DiagnosticInfo } , -- Used to color "Info" diagnostic messages in diagnostics float.
