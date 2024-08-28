@@ -30,6 +30,7 @@ return lush(function(injected_functions)
     --  sym                     "@lsp.type.interface" {},
     sym "@lsp.type.macro"        { base.PreProc },
     sym "@lsp.mod.globalScope"   { base.PreProc },
+    sym "@lsp.mod.global"        { base.PreProc },
 
     sym "@lsp.type.namespace"    { fg = c.syntax.namespace },
     sym "@lsp.typemod.namespace" { fg = c.syntax.namespace },
@@ -51,9 +52,6 @@ return lush(function(injected_functions)
     sym "@lsp.typemod.variable.readonly" { italic = true     },
     sym "@variable"                      { fg   = c.fg     },
     sym "@variable.builtin.python"       { base.Identifier },
-
-    sym "@lsp.mod"                       { fg   = c.syntax.entity    },
-
 
     sym "@text"              { fg = c.syntax.string    },
     sym "@text.literal"      { fg = c.syntax.string    },
