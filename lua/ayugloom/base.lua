@@ -177,7 +177,7 @@ local theme = lush(function()
     DiagnosticUnnecessary      { fg = c.syntax.comment, gui = 'strikethrough' }, -- Used to color "Unnecessary" diagnostics.
 
     -- Floating windows
-    FloatBorder { VertSplit }, -- Border of floating windows.
+    FloatBorder { Identifier }, -- Border of floating windows.
     FloatTitle { fg = Normal.bg, bg = Title.fg, italic = true }, -- Border of floating windows.
 
     WinBar         { Normal },
