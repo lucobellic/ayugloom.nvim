@@ -162,10 +162,10 @@ local theme = lush(function()
     DiagnosticLineNrWarn       { DiagnosticWarn }, -- User for "Warn" diagnostic signs in sign column
     DiagnosticLineNrInfo       { DiagnosticInfo }, -- Used for "Info" diagnostic signs in sign column
     DiagnosticLineNrHint       { DiagnosticHint }, -- Used for "Hint" diagnostic signs in sign column
-    DiagnosticUnderlineError   { underline = false, undercurl = true }, -- Used to underline "Error" diagnostics.
-    DiagnosticUnderlineWarn    { underline = false, undercurl = true }, -- Used to underline "Warn" diagnostics.
-    DiagnosticUnderlineInfo    { underline = false, undercurl = false }, -- Used to underline "Info" diagnostics.
-    DiagnosticUnderlineHint    { underline = false, undercurl = false }, -- Used to underline "Hint" diagnostics.
+    DiagnosticUnderlineError   { sp = DiagnosticError.fg, underline = false, undercurl = true }, -- Used to underline "Error" diagnostics.
+    DiagnosticUnderlineWarn    { sp = DiagnosticWarn.fg, underline = false, undercurl = true }, -- Used to underline "Warn" diagnostics.
+    DiagnosticUnderlineInfo    { sp = DiagnosticInfo.fg, underline = false, undercurl = false }, -- Used to underline "Info" diagnostics.
+    DiagnosticUnderlineHint    { sp = DiagnosticHint.fg, underline = false, undercurl = false }, -- Used to underline "Hint" diagnostics.
     DiagnosticFloatingError    { DiagnosticError } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
     DiagnosticFloatingWarn     { DiagnosticWarn } , -- Used to color "Warn" diagnostic messages in diagnostics float.
     DiagnosticFloatingInfo     { DiagnosticInfo } , -- Used to color "Info" diagnostic messages in diagnostics float.
