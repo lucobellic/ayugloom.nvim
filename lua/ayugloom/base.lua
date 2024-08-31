@@ -174,7 +174,7 @@ local theme = lush(function()
     DiagnosticSignWarn         { DiagnosticWarn } , -- Used for "Warn" signs in sign column.
     DiagnosticSignInfo         { DiagnosticInfo } , -- Used for "Info" signs in sign column.
     DiagnosticSignHint         { DiagnosticHint } , -- Used for "Hint" signs in sign column.
-    DiagnosticUnnecessary      { fg = c.syntax.comment, gui = 'strikethrough' }, -- Used to color "Unnecessary" diagnostics.
+    DiagnosticUnnecessary      { fg = c.syntax.comment, gui = 'italic' }, -- Used to color "Unnecessary" diagnostics.
 
     -- Floating windows
     FloatBorder { Identifier }, -- Border of floating windows.
