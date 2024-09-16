@@ -7,5 +7,6 @@ return lush(function()
     SatelliteMark { base.NonText },
     SatelliteBar { bg = c.editor.line },
     SatelliteCursor { fg = c.magenta },
+    SatelliteSearchCurrent { fg = c.light_red },
   }
 end)
