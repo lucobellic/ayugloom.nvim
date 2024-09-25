@@ -1,9 +1,10 @@
 local lush = require('lush')
 local base = require('ayugloom.base')
+local c = require('ayugloom.colors')
 
 return lush(function()
   return {
-    CmpItemAbbr           { base.Normal                },
+    CmpItemAbbr           { fg = c.fg                  },
     CmpItemAbbrMatch      { base.Tag                   },
     CmpItemAbbrMatchFuzzy { base.Keyword               },
     CmpItemAbbrDeprecated { base.DiagnosticUnnecessary },
