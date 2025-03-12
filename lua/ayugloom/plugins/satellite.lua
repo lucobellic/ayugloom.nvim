@@ -5,7 +5,7 @@ local base = require('ayugloom.base')
 return lush(function()
   return {
     SatelliteMark { base.NonText },
-    SatelliteBar { bg = c.editor.line },
+    SatelliteBar { bg = base.Visual.bg },
     SatelliteCursor { fg = c.magenta },
     SatelliteSearchCurrent { fg = c.light_red },
   }

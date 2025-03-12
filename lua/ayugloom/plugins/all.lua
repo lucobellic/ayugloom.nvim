@@ -2,10 +2,11 @@ local lush = require('lush')
 local plugins = 'ayugloom.plugins.'
 
 return lush.merge({
-  require(plugins .. 'treesitter.all'),
   require(plugins .. 'barbar'),
+  require(plugins .. 'blink'),
   require(plugins .. 'bufferline'),
   require(plugins .. 'cmp'),
+  require(plugins .. 'copilot'),
   require(plugins .. 'diffview'),
   require(plugins .. 'dropbar'),
   require(plugins .. 'flash'),
@@ -17,16 +18,19 @@ return lush.merge({
   require(plugins .. 'lspconfig'),
   require(plugins .. 'lspsaga'),
   require(plugins .. 'lualine'),
+  require(plugins .. 'navbuddy'),
   require(plugins .. 'neotest'),
   require(plugins .. 'neotree'),
   require(plugins .. 'noice'),
   require(plugins .. 'notify'),
   require(plugins .. 'nvim-dap-ui'),
   require(plugins .. 'nvim-treesitter-context'),
-  require(plugins .. 'navbuddy'),
   require(plugins .. 'satellite'),
   require(plugins .. 'scrollbar'),
   require(plugins .. 'semshi'),
+  require(plugins .. 'snacks'),
   require(plugins .. 'telescope'),
   require(plugins .. 'todo-trouble'),
+  require(plugins .. 'treesitter.all'),
+  require(plugins .. 'ufo'),
 })

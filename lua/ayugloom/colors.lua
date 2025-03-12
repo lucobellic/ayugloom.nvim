@@ -92,7 +92,7 @@ return {
     },
   },
   common = {
-    accent = hsl('#FFCC66'),
+    accent = light_orange,
     error = hsl('#E95757'),
   },
 

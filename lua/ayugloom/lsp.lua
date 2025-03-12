@@ -14,6 +14,7 @@ return lush(function(injected_functions)
 
     -- syn "@type.cpp"                { fg = c.syntax.entity   },
     sym "@lsp.type.class"      { fg = c.syntax.entity   },
+    sym "@lsp.typemod.class"   { fg = c.syntax.entity   },
     sym "@lsp.type.struct"     { fg = c.syntax.entity   },
     sym "@lsp.type.decorator"  { fg = c.common.accent   },
     sym "@lsp.type.enum"       { fg = c.syntax.entity   },

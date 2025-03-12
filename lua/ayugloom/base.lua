@@ -4,7 +4,8 @@ local c = require('ayugloom.colors')
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
 ---@diagnostic disable: undefined-global
-local theme = lush(function()
+local theme = lush(function(injected_functions)
+  local sym = injected_functions.sym
   return {
     -- The following are the Neovim (as of 0.8.0-dev+100-g371dfb174) highlight
     -- groups, mostly used for styling UI elements.
@@ -35,6 +36,9 @@ local theme = lush(function()
     diffRemoved  { fg = c.vcs.removed  },
     diffChanged  { fg = c.vcs.modified },
 
+    sym "@diff.minus.diff" { diffRemoved },
+    sym "@diff.plus.diff"  { diffAdded },
+
     Normal       { fg = c.fg, bg = c.bg }, -- Normal text
     NormalFloat  { Normal }, -- Normal text in floating windows.
     NormalNC     { Normal }, -- normal text in non-current windows
@@ -59,7 +63,7 @@ local theme = lush(function()
     NonText      { fg = c.guide }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 
     Pmenu        { Normal }, -- Popup menu: Normal item.
-    PmenuSel     { bg = c.editor.line }, -- Popup menu: Selected item.
+    PmenuSel     { bg = c.selection }, -- Popup menu: Selected item.
     PmenuSbar    { PmenuSel }, -- Popup menu: Scrollbar.
     PmenuThumb   { CursorLine }, -- Popup menu: Thumb of the scrollbar.
     Question     { MoreMsg }, -- |hit-enter| prompt and yes/no questions
@@ -153,10 +157,15 @@ local theme = lush(function()
     DiagnosticWarn             { WarningMsg }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticInfo             { fg = c.syntax.tag }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticHint             { fg = c.light_green }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
-    -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
-    -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
-    -- DiagnosticVirtualTextHint  { } , -- Used for "Hint" diagnostic virtual text.
+    DiagnosticVirtualTextError { fg = DiagnosticError.fg, bg = DiagnosticError.fg.darken(90) } , -- Used for "Error" diagnostic virtual text.
+    DiagnosticVirtualTextWarn  { fg = DiagnosticWarn.fg,  bg = DiagnosticWarn.fg.darken(90)  } , -- Used for "Warn" diagnostic virtual text.
+    DiagnosticVirtualTextInfo  { fg = DiagnosticInfo.fg,  bg = DiagnosticInfo.fg.darken(90)  } , -- Used for "Info" diagnostic virtual text.
+    DiagnosticVirtualTextHint  { fg = DiagnosticHint.fg,  bg = DiagnosticHint.fg.darken(90)  } , -- Used for "Hint" diagnostic virtual text.
+
+    DiagnosticVirtualLinesError { DiagnosticVirtualTextError},
+    DiagnosticVirtualLinesWarn  { DiagnosticVirtualTextWarn },
+    DiagnosticVirtualLinesInfo  { DiagnosticVirtualTextInfo },
+    DiagnosticVirtualLinesHint  { DiagnosticVirtualTextHint },
 
     DiagnosticLineNrError      { DiagnosticError }, -- Used for "Error" diagnostic signs in sign column
     DiagnosticLineNrWarn       { DiagnosticWarn }, -- User for "Warn" diagnostic signs in sign column
