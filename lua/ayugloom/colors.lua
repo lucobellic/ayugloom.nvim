@@ -28,6 +28,8 @@ return {
   light_red = light_red,
   light_blue = light_blue,
   light_green = light_green,
+  light_yellow = light_yellow,
+  light_orange = light_orange,
 
   syntax = {
     tag = blue,

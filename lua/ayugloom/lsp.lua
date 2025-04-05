@@ -15,6 +15,7 @@ return lush(function(injected_functions)
     -- syn "@type.cpp"                { fg = c.syntax.entity   },
     sym "@lsp.type.class"      { fg = c.syntax.entity   },
     sym "@lsp.typemod.class"   { fg = c.syntax.entity   },
+    sym "@lsp.typemod.type"    { fg = c.syntax.entity   },
     sym "@lsp.type.struct"     { fg = c.syntax.entity   },
     sym "@lsp.type.decorator"  { fg = c.common.accent   },
     sym "@lsp.type.enum"       { fg = c.syntax.entity   },
@@ -50,7 +51,8 @@ return lush(function(injected_functions)
 
     sym "@lsp.type.variable"             { fg   = c.fg     },
     sym "@lsp.typemod.variable"          { fg   = c.fg     },
-    sym "@lsp.typemod.variable.readonly" { italic = true     },
+    sym "@lsp.mod.readonly"              { italic = true   },
+    sym "@lsp.typemod.variable.readonly" { italic = true   },
     sym "@variable"                      { fg   = c.fg     },
     sym "@variable.builtin.python"       { base.Identifier },
 

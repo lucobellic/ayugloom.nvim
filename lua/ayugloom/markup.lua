@@ -27,7 +27,7 @@ local gradient = {
 return lush(function(injected_functions)
   local sym = injected_functions.sym
   return {
-    sym '@markup'                           { base.Special, italic = true },
+    sym '@markup'                           { base.Special },
     -- sym '@markup.raw.block.markdown'        { base.Comment, italic = true },
     sym '@markup.heading.1.markdown'        { fg = gradient[1] },
     sym '@markup.heading.1.marker.markdown' { fg = gradient[1], italic = true },

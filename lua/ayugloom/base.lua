@@ -65,7 +65,7 @@ local theme = lush(function(injected_functions)
     Pmenu        { Normal }, -- Popup menu: Normal item.
     PmenuSel     { bg = c.selection }, -- Popup menu: Selected item.
     PmenuSbar    { PmenuSel }, -- Popup menu: Scrollbar.
-    PmenuThumb   { CursorLine }, -- Popup menu: Thumb of the scrollbar.
+    PmenuThumb   { bg = c.selection }, -- Popup menu: Thumb of the scrollbar.
     Question     { MoreMsg }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search       { IncSearch }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
@@ -115,7 +115,7 @@ local theme = lush(function(injected_functions)
     Keyword        { fg = c.syntax.keyword }, --   any other keyword
     Exception      { fg = c.syntax.keyword, italic = true }, --   try, catch, throw
 
-    PreProc        { fg = c.common.accent }, -- (*) Generic Preprocessor
+    PreProc        { fg = c.magenta }, -- (*) Generic Preprocessor
     Include        { fg = c.syntax.keyword }, --   Preprocessor #include
     -- Define         { }, --   Preprocessor #define
     -- Macro          { }, --   Same as Define
@@ -157,10 +157,10 @@ local theme = lush(function(injected_functions)
     DiagnosticWarn             { WarningMsg }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticInfo             { fg = c.syntax.tag }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticHint             { fg = c.light_green }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticVirtualTextError { fg = DiagnosticError.fg, bg = DiagnosticError.fg.darken(90) } , -- Used for "Error" diagnostic virtual text.
-    DiagnosticVirtualTextWarn  { fg = DiagnosticWarn.fg,  bg = DiagnosticWarn.fg.darken(90)  } , -- Used for "Warn" diagnostic virtual text.
-    DiagnosticVirtualTextInfo  { fg = DiagnosticInfo.fg,  bg = DiagnosticInfo.fg.darken(90)  } , -- Used for "Info" diagnostic virtual text.
-    DiagnosticVirtualTextHint  { fg = DiagnosticHint.fg,  bg = DiagnosticHint.fg.darken(90)  } , -- Used for "Hint" diagnostic virtual text.
+    DiagnosticVirtualTextError { fg = DiagnosticError.fg, --[[bg = DiagnosticError.fg.darken(90)]] } , -- Used for "Error" diagnostic virtual text.
+    DiagnosticVirtualTextWarn  { fg = DiagnosticWarn.fg,  --[[bg = DiagnosticWarn.fg.darken(90) ]] } , -- Used for "Warn" diagnostic virtual text.
+    DiagnosticVirtualTextInfo  { fg = DiagnosticInfo.fg,  --[[bg = DiagnosticInfo.fg.darken(90) ]] } , -- Used for "Info" diagnostic virtual text.
+    DiagnosticVirtualTextHint  { fg = DiagnosticHint.fg,  --[[bg = DiagnosticHint.fg.darken(90) ]] } , -- Used for "Hint" diagnostic virtual text.
 
     DiagnosticVirtualLinesError { DiagnosticVirtualTextError},
     DiagnosticVirtualLinesWarn  { DiagnosticVirtualTextWarn },

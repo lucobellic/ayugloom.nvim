@@ -2,6 +2,7 @@ local lush = require('lush')
 local plugins = 'ayugloom.plugins.'
 
 return lush.merge({
+  require(plugins .. 'avante'),
   require(plugins .. 'barbar'),
   require(plugins .. 'blink'),
   require(plugins .. 'bufferline'),

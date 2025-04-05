@@ -4,6 +4,9 @@ local base = require('ayugloom.base')
 return lush(function(injected_functions)
   local sym = injected_functions.sym
   return {
+    DapBreakpoint { base.DiagnosticError },
+    DapBreakpointCondition { base.DiagnosticWarn },
+    DapBreakpointRejected {base.Comment },
     DapUIBreakpointsCurrentLine { base.Normal },
     DapUIBreakpointsDisabledLine { base.Comment },
     DapUIBreakpointsInfo { base.String },

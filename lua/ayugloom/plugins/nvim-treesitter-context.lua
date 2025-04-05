@@ -5,9 +5,9 @@ local lush = require('lush')
 return lush(
   function()
     return {
-      TreesitterContext({ italic = true }),
-      TreesitterContextLineNumber({ base.LineNr, italic = true }),
-      TreesitterContextSeparator({ base.FloatBorder }),
+      -- TreesitterContext({ italic = true }),
+      TreesitterContextLineNumber({ base.LineNr }),
+      TreesitterContextSeparator({ base.WinSeparator }),
     }
   end
 )
