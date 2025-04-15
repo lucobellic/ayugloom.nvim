@@ -186,7 +186,7 @@ local theme = lush(function(injected_functions)
     DiagnosticUnnecessary      { fg = c.syntax.comment, gui = 'italic' }, -- Used to color "Unnecessary" diagnostics.
 
     -- Floating windows
-    FloatBorder { Identifier }, -- Border of floating windows.
+    FloatBorder { VertSplit }, -- Border of floating windows.
     FloatTitle { fg = Normal.bg, bg = Title.fg, italic = true }, -- Border of floating windows.
 
     WinBar         { Normal },
