@@ -49,11 +49,12 @@ return lush(function(injected_functions)
     sym "@lsp.type.typeParameter"        { fg = c.syntax.parameter },
     sym "@lsp.typemod.parameter"         { fg = c.syntax.parameter },
 
-    sym "@lsp.type.variable"             { fg   = c.fg     },
-    sym "@lsp.typemod.variable"          { fg   = c.fg     },
+    sym "@lsp.type.variable"             { fg = c.fg       },
+    sym "@lsp.typemod.variable"          { fg = c.fg       },
     sym "@lsp.mod.readonly"              { italic = true   },
     sym "@lsp.typemod.variable.readonly" { italic = true   },
-    sym "@variable"                      { fg   = c.fg     },
+    sym "@lsp.typemod.variable.static"   { italic = true   },
+    sym "@variable"                      { fg = c.fg       },
     sym "@variable.builtin.python"       { base.Identifier },
 
     sym "@text"              { fg = c.syntax.string    },
