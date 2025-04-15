@@ -18,14 +18,21 @@ local theme = lush(function(injected_functions)
     -- See :h highlight-groups
     --
 
-    ColorColumn  { bg = c.editor.line}, -- Columns set with 'colorcolumn'
-    Conceal      { fg = c.fg, italic = true }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-    Cursor       { reverse = true }, -- Character under the cursor
-    lCursor      { Cursor }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
-    CursorIM     { Cursor }, -- Like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn { bg = c.editor.line }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine   { bg = c.editor.line }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
-    Directory    { fg = c.guide }, -- Directory names (and other special names in listings)
+    ColorColumn    { bg = c.editor.line}, -- Columns set with 'colorcolumn'
+    Conceal        { italic = true }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
+    Cursor         { bg = c.light_orange, reverse = true }, -- Character under the cursor
+    lCursor        { Cursor }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
+    CursorIM       { Cursor }, -- Like Cursor, but used when in IME mode |CursorIM|
+    CursorColumn   { bg = c.editor.line }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorLine     { bg = c.editor.line }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLineNr   { fg = Normal.fg, bg = CursorLine.bg }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    CursorLineFold { bg = c.editor.line },
+    CursorLineSign { bg = c.editor.line },
+    Directory      { fg = c.guide }, -- Directory names (and other special names in listings)
+
+    CursorVisual   { bg = c.selection.lighten(20) },
+    CursorOperator { bg = c.red },
+    CursorInsert   { bg = c.orange },
 
     DiffAdd      { bg = c.diff.added }, -- Diff mode: Added line |diff.txt|
     DiffChange   { bg = c.diff.modified }, -- Diff mode: Changed line |diff.txt|
@@ -54,7 +61,6 @@ local theme = lush(function(injected_functions)
     IncSearch    { fg = c.bg, bg = c.vcs.modified }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute   { fg = c.bg, bg = c.vcs.added }, -- |:substitute| replacement text highlighting
     LineNr       { Folded }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set
-    CursorLineNr { fg = Normal.fg, bg = CursorLine.bg }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen   { reverse = true, unerline = false }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg      { fg = c.syntax.string }, -- 'showmode' message (e.g., "-- INSERT -- ")
     -- MsgArea      { }, -- Area for messages and cmdline
